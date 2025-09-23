@@ -27,9 +27,9 @@ To address these challenges, we propose **ASTGI (Adaptive Spatio-Temporal Graph 
 
 ## 📦 Quickstart
 
-> **Recommended Environment**
-> - Python **3.11**
-> - CUDA **12.0**
+**Recommended Environment**
+- Python **3.11**
+- CUDA **12.0**
 
 ### 1️⃣ Installation
 Create a clean environment and install dependencies:
