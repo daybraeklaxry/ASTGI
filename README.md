@@ -1,34 +1,78 @@
-# ASTGI
-# Rethinking Irregular Time Series Forecasting:  A Simple yet Effective Baseline
+# ASTGI  
+**A Simple & Strong Baseline for Irregular Time Series Forecasting**
 
-## Introduction
+[![Python](https://img.shields.io/badge/python-3.11-blue.svg)](https://www.python.org/downloads/release/python-3110/)
+[![CUDA](https://img.shields.io/badge/CUDA-12.0-green.svg)](https://developer.nvidia.com/cuda-toolkit)
+[![License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](LICENSE)
 
-Irregular multivariate time series (IMTS) are prevalent in critical domains like healthcare and finance, where accurate forecasting is vital for proactive decision-making. However, the asynchronous sampling and irregular intervals inherent to IMTS pose two core challenges for existing methods: (1) how to accurately represent the raw information of irregular time series without introducing data distortion, and (2) how to effectively capture the complex dynamic dependencies between observation points. To address these challenges, we propose the Adaptive Spatio-Temporal Graph Interaction (ASTGI) framework. Specifically, the framework first employs a Spatio-Temporal Point Representation module to encode each discrete observation as a point within a learnable spatio-temporal embedding space. Second, a Neighborhood-Adaptive Graph Construction module adaptively builds a causal graph for each point in the embedding space via nearest neighbor search. Subsequently, a Spatio-Temporal Dynamic Propagation module iteratively updates information on these adaptive causal graphs by generating messages and computing interaction weights based on the relative spatio-temporal positions between points. Finally, a Query Point-based Prediction module generates the final forecast by aggregating neighborhood information for a new query point and performing regression. Extensive experiments on multiple benchmark datasets demonstrate that ASTGI outperforms various state-of-the-art methods.
+
+
+## 🚀 Introduction
+Irregular multivariate time series (IMTS) are prevalent in critical domains like healthcare and finance, where accurate forecasting is vital for proactive decision-making.  
+However, the **asynchronous sampling** and **irregular intervals** inherent to IMTS pose two core challenges:
+
+1. **Representation:** How to accurately represent the raw information of irregular time series without distortion.  
+2. **Dependency Modeling:** How to effectively capture complex dynamic dependencies between observation points.
+
+To address these challenges, we propose **ASTGI (Adaptive Spatio-Temporal Graph Interaction)** — a simple yet powerful framework:
+
+- 🧩 **Point-wise Representation:** Encode each observation as a spatio-temporal point in a learnable embedding space.  
+- 🔗 **Neighborhood-Adaptive Graph Construction:** Dynamically build causal graphs via nearest neighbor search.  
+- 🔄 **Dynamic Propagation:** Iteratively update node features through spatio-temporal message passing.  
+- 🎯 **Query-based Prediction:** Aggregate neighbors to forecast the value at a new query point.
 
 <div align="center">
-<img alt="Logo" src="figs/overview.png" width="80%"/>
+<img alt="Overview" src="figs/overview.png" width="80%"/>
 </div>
 
-Overview of the ASTGI framework. (a) Directly representing each discrete observation as a spatio-temporal point. (b) Adaptively constructing a causal graph for each point. (c) Iteratively propagating information on the adaptive graphs to update features. (d) Unifying prediction as a neighborhood aggregation task for a query point.
+## 📦 Quickstart
 
-## Quickstart
-> [!IMPORTANT]
-> this project is fully tested under python 3.11, it is recommended that you set the Python version to 3.11 and CUDA version to 12.0
-1. Installation:
+> **Recommended Environment**
+> - Python **3.11**
+> - CUDA **12.0**
 
-> ```shell
-> pip install -r requirements.txt
-> ```
+### 1️⃣ Installation
+Create a clean environment and install dependencies:
+```bash
+conda create -n astgi python=3.11 -y
+conda activate astgi
+pip install -r requirements.txt
+```
 
-2. Data preparation:
-If you want to test the MIMIC dataset, you should follow these steps:
-    1. Follow the processing scripts in [gru_ode_bayes](https://github.com/edebrouwer/gru_ode_bayes/tree/master/data_preproc/MIMIC) to generate `complete_tensor.csv`.
-    2. Place the resulting file under `~/.tsdm/rawdata/MIMIC_III_DeBrouwer2019/complete_tensor.csv`.
-3. Train and evaluate model:
+### 2️⃣ Data Preparation
 
-We provide the experiment scripts for all benchmarks under the folder `./APN/scripts`. For example you can reproduce a experiment result as the following:
+The **PhysioNet**, **USHCN**, and **HumanActivity** datasets are downloaded and processed automatically when you run the code for the first time.
 
-```shell
+For the **MIMIC** dataset, a manual preprocessing step is required:
+
+1.  Follow the preprocessing scripts in [gru\_ode\_bayes](https://github.com/edebrouwer/gru_ode_bayes/tree/master/data_preproc/MIMIC) to generate the `complete_tensor.csv` file.
+2.  Place the generated file under the following path (you may need to create the directories):
+    ```bash
+    ~/.tsdm/rawdata/MIMIC_III_DeBrouwer2019/complete_tensor.csv
+    ```
+
+### 3️⃣ Train 
+
+Run the benchmark experiments with provided scripts:
+
+```bash
 bash ./scripts/ASTGI/USHCN.sh
 ```
+
+## 📊 Benchmark Results
+<div align="center">
+<img alt="Result" src="figs/result.png" width="80%"/>
+</div>
+
+> 📈 **ASTGI consistently outperforms SOTA baselines** across multiple datasets.
+
+
+## 🤝 Contributing
+
+Contributions are welcome!
+Feel free to open issues or submit pull requests if you find bugs or want to add new features.
+
+## 📜 License
+
+This project is released under the [MIT License](LICENSE).
 
