@@ -19,13 +19,14 @@ Overview of the ASTGI framework. (a) Directly representing each discrete observa
 > ```
 
 2. Data preparation:
-    1. Follow the processing scripts in [gru_ode_bayes](https://github.com/edebrouwer/gru_ode_bayes/tree/master/data_preproc/MIMIC) to get complete_tensor.csv.
-    2. Put the result under ~/.tsdm/rawdata/MIMIC_III_DeBrouwer2019/complete_tensor.csv.
+If you want to test the MIMIC dataset, you should follow these steps:
+    1. Follow the processing scripts in [gru_ode_bayes](https://github.com/edebrouwer/gru_ode_bayes/tree/master/data_preproc/MIMIC) to generate `complete_tensor.csv`.
+    2. Place the resulting file under `~/.tsdm/rawdata/MIMIC_III_DeBrouwer2019/complete_tensor.csv`.
 3. Train and evaluate model:
 
 We provide the experiment scripts for all benchmarks under the folder `./APN/scripts`. For example you can reproduce a experiment result as the following:
 
 ```shell
-bash ./scripts/USHCN.sh
+bash ./scripts/ASTGI/USHCN.sh
 ```
 
