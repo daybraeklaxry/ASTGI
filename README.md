@@ -1,5 +1,5 @@
 # ASTGI  
-**A Simple & Strong Baseline for Irregular Time Series Forecasting**
+**A Strong Baseline for Irregular Time Series Forecasting**
 
 [![Python](https://img.shields.io/badge/python-3.11-blue.svg)](https://www.python.org/downloads/release/python-3110/)
 [![CUDA](https://img.shields.io/badge/CUDA-12.0-green.svg)](https://developer.nvidia.com/cuda-toolkit)
@@ -41,7 +41,7 @@ pip install -r requirements.txt
 
 ### 2️⃣ Data Preparation
 
-The **PhysioNet**, **USHCN**, and **HumanActivity** datasets are downloaded and processed automatically when you run the code for the first time.
+The **PhysioNet**, **USHCN**, and **Human Activity** datasets are downloaded and processed automatically when you run the code for the first time.
 
 For the **MIMIC** dataset, a manual preprocessing step is required:
 
