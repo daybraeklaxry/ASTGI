@@ -2,7 +2,7 @@
 
 GPU_IDS="6"
 
-model_name="ST-PPGN"
+model_name="ASTGI"
 dataset_root_path="storage/datasets/USHCN"
 dataset_name="USHCN"
 seq_len=150

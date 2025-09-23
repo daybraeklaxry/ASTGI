@@ -2,7 +2,7 @@
 
 GPU_IDS="7"
 
-model_name="ST-PPGN"
+model_name="ASTGI"
 dataset_root_path="storage/datasets/MIMIC_III"
 dataset_name="MIMIC_III"
 seq_len=72

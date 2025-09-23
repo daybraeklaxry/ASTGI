@@ -2,7 +2,7 @@
 
 GPU_IDS="0"
 
-model_name="ST-PPGN"
+model_name="ASTGI"
 dataset_root_path="storage/datasets/HumanActivity"
 dataset_name="HumanActivity"
 seq_len=3000

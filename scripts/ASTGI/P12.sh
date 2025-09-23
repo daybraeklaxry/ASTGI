@@ -2,7 +2,7 @@
 
 GPU_IDS="5"
 
-model_name="ST-PPGN"
+model_name="ASTGI"
 dataset_root_path="storage/datasets/P12"
 dataset_name="P12"
 seq_len=36
