@@ -44,7 +44,7 @@ The **PhysioNet**, **USHCN**, and **Human Activity** datasets are downloaded and
 
 For the **MIMIC** dataset, a manual preprocessing step is required:
 
-1.  Follow the preprocessing scripts in [gru\_ode\_bayes](https://github.com/edebrouwer/gru_ode_bayes/tree/master/data_preproc/MIMIC) to generate the `complete_tensor.csv` file.
+1.  Follow the preprocessing scripts in gru\_ode\_bayes to generate the `complete_tensor.csv` file.
 2.  Place the generated file under the following path (you may need to create the directories):
     ```bash
     ~/.tsdm/rawdata/MIMIC_III_DeBrouwer2019/complete_tensor.csv
