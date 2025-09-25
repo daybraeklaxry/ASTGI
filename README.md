@@ -70,8 +70,3 @@ bash ./scripts/ASTGI/USHCN.sh
 
 Contributions are welcome!
 Feel free to open issues or submit pull requests if you find bugs or want to add new features.
-
-## 📜 License
-
-This project is released under the [MIT License](LICENSE).
-
